@@ -3,6 +3,7 @@ const multer = require("multer");
 const fs = require("fs");
 const path = require("path");
 const { uploadResume } = require("../controllers/resumeController");
+const authMiddleware = require("../middlewares/auth");
 
 const router = express.Router();
 
@@ -27,6 +28,6 @@ const upload = multer({
   },
 });
 
-router.post("/analyze-resume", upload.single("resume"), uploadResume);
+router.post("/analyze-resume",authMiddleware, upload.single("resume"), uploadResume);
 
 module.exports = router;
