@@ -1,59 +1,72 @@
-import { LightBulbIcon, DocumentChartBarIcon, ChatBubbleBottomCenterTextIcon, ShieldCheckIcon } from '@heroicons/react/24/outline'
+import { Check, Search, Zap, Layout } from "lucide-react";
 
 const features = [
   {
-    name: 'Instant Resume Analysis',
+    name: "Keyword Gap Analysis",
     description:
-      'Upload your resume and get a detailed analysis within minutes. Identify strengths, weaknesses, and areas for improvement instantly.',
-    icon: DocumentChartBarIcon,
+      "Compares your profile against a specific JD to extract missing technical and soft skills.",
+    icon: Search,
   },
   {
-    name: 'ATS Optimization',
+    name: "ATS Score Breakdown",
     description:
-      'Get actionable tips to make your resume compatible with Applicant Tracking Systems so recruiters notice you faster.',
-    icon: ShieldCheckIcon,
+      "Detailed evaluation of formatting, content quality, and machine-readability.",
+    icon: Layout,
   },
   {
-    name: 'Skill & Keyword Suggestions',
+    name: "Actionable Guidance",
     description:
-      'Receive recommendations on essential skills and keywords to include in your resume to increase your chances of selection.',
-    icon: LightBulbIcon,
+      "Real insights on how to improve your bullet points and organize your resume.",
+    icon: Zap,
   },
   {
-    name: 'Personalized Feedback',
+    name: "Strength Identification",
     description:
-      'Get customized guidance to improve your resume layout, clarity, and overall impact so you can land your dream job.',
-    icon: ChatBubbleBottomCenterTextIcon,
+      "Highlights well-represented areas in your resume for recruiter impact.",
+    icon: Check,
   },
-]
+];
 
-export default function Features() {
+const Features = () => {
   return (
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 -mt-20" id="features">
-        <div className="mx-auto max-w-2xl lg:text-center">
-          <p className="mt-2 text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-balance">
-            Make your resume <span className="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">stand out</span> and impress recruiters
+    <div
+      className="mx-auto max-w-7xl px-6 lg:px-8 py-20 bg-slate-50/50"
+      id="features"
+    >
+      <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-3 lg:gap-x-12">
+        <div className="lg:col-span-1">
+          <h2 className="text-sm font-semibold text-indigo-600 uppercase tracking-widest">
+            Capabilities
+          </h2>
+          <p className="mt-4 text-3xl font-bold tracking-tight text-slate-900">
+            Technical analysis of your profile.
           </p>
-          <p className="mt-6 text-lg/8 text-gray-300">
-            ResuMate provides smart insights, keyword suggestions, and personalized feedback to help you optimize your resume and land your dream job.
+          <p className="mt-4 text-base leading-7 text-slate-600">
+            Built to provide transparency into how automated systems and
+            recruiters evaluate your resume.
           </p>
         </div>
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+
+        <div className="lg:col-span-2">
+          <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2">
             {features.map((feature) => (
-              <div key={feature.name} className="relative pl-16">
-                <dt className="text-base/7 font-semibold text-white">
-                  <div className="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-indigo-500">
-                    <feature.icon aria-hidden="true" className="size-6 text-white" />
+              <div key={feature.name} className="relative pl-14">
+                <dt className="text-base font-semibold leading-7 text-slate-900">
+                  <div className="absolute top-0 left-0 flex h-9 w-9 items-center justify-center rounded-lg bg-white border border-slate-200">
+                    <feature.icon className="h-5 w-5 text-indigo-600" />
                   </div>
                   {feature.name}
                 </dt>
-                <dd className="mt-2 text-base/7 text-gray-400">{feature.description}</dd>
+                <dd className="mt-2 text-sm leading-6 text-slate-600">
+                  {feature.description}
+                </dd>
               </div>
             ))}
           </dl>
         </div>
       </div>
-   
-     )
-}
+    </div>
+  );
+};
+
+export default Features;
