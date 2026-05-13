@@ -70,10 +70,11 @@ exports.getDashboardData = async (req, res) => {
           month: "short",
           year: "numeric",
         }),
-        time: dateObj.toLocaleString("en-US", {
+        time: dateObj.toLocaleString("en-IN", {
           hour: "2-digit",
           minute: "2-digit",
           hour12: true,
+          timeZone: "Asia/Kolkata",
         }),
         score: analysis.analysisData.overall_score,
       };
@@ -123,10 +124,11 @@ exports.getHistoryData = async (req, res) => {
           month: "short",
           year: "numeric",
         }),
-        time: dateObj.toLocaleString("en-US", {
+        time: dateObj.toLocaleString("en-IN", {
           hour: "2-digit",
           minute: "2-digit",
           hour12: true,
+          timeZone: "Asia/Kolkata",
         }),
         score: analysis.analysisData.overall_score,
       };
