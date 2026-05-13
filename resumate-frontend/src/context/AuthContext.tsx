@@ -23,11 +23,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    checkAuthStatus();
-  }, []);
-
-  const checkAuthStatus = async () => {
+   const checkAuthStatus = async () => {
     try {
       const response = await axios.get(
         `${baseUrl}/api/auth/status`,
@@ -49,6 +45,12 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    checkAuthStatus();
+  }, []);
+
+ 
 
   return (
     <AuthContext.Provider value={{ user,setUser, loading, checkAuthStatus }}>
