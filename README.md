@@ -1,6 +1,6 @@
 # ResuMate: AI-Powered Resume Analyzer
 
-<img width="1892" height="861" alt="Screenshot (14)" src="https://github.com/user-attachments/assets/5f07a102-d472-460b-857e-1383f53b6313" />
+<img width="1892" height="861" alt="Landing Page" src="https://github.com/user-attachments/assets/5f07a102-d472-460b-857e-1383f53b6313" />
 
 
 ---
